@@ -26,6 +26,10 @@ public class Product {
         this.category = category;
     }
 
+    public Product(){
+        super();
+    }
+
     public String getName() {
         return name;
     }
@@ -44,5 +48,21 @@ public class Product {
 
     public Category getCategory() {
         return category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
