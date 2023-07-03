@@ -12,7 +12,7 @@ public class ProductDAO {
     private EntityManager entityManager ;
 
     public ProductDAO(){
-        this.entityManager = JPA.callEntityManager();;
+        this.entityManager = JPA.returnEntityManager();;
     }
     public void create(Product product){
         this.entityManager.persist(product);
@@ -45,3 +45,5 @@ public class ProductDAO {
     }
 
 }
+
+
