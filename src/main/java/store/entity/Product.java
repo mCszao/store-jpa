@@ -1,7 +1,6 @@
 package store.entity;
 
 import jakarta.persistence.*;
-import store.model.Category;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -16,8 +15,16 @@ public class Product {
     private String description;
     private BigDecimal price;
     private LocalDate createdAt = LocalDate.now();
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private Category category;
+
+    private BigDecimal quantity;
+
+    @ManyToOne
+    private Stock stock;
+
+
+
 
     public Product(String name, String description, BigDecimal price, Category category) {
         this.name = name;

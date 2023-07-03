@@ -1,0 +1,15 @@
+CREATE DATABASE store;
+CREATE TABLE categories (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE products (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  price DECIMAL(10, 2) NOT NULL default 0,
+  categoryId INT NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (categoryId) REFERENCES categories(id)
+);
