@@ -7,7 +7,7 @@ import jakarta.persistence.Persistence;
 public class JPA {
     private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("store");
 
-    public static EntityManager callEntityManager(){
+    public static EntityManager returnEntityManager(){
         return factory.createEntityManager();
     }
 }
