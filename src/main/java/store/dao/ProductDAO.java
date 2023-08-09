@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class ProductDAO {
-    private EntityManager entityManager ;
+    private final EntityManager entityManager ;
 
     public ProductDAO(){
         this.entityManager = JPA.returnEntityManager();;
