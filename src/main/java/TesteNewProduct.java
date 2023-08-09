@@ -1,18 +1,16 @@
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import store.JPA;
-import store.dao.ProductDAO;
-import store.entity.Product;
-import store.model.Category;
-
-import java.math.BigDecimal;
+import store.dao.CategoryDAO;
+import store.entity.Category;
 
 public class TesteNewProduct {
     public static void main(String[] args) {
-        Product nP = new Product("Samsumg Galaxy S10","capa vermelha",new BigDecimal("100"), Category.MOBILES);
+//    List<Product> list = new ProductDAO().selectLessThan(new BigDecimal("60"));
+//    list.forEach(product -> System.out.println(product.getDescription() + product.getName()));
+        new CategoryDAO().add(new Category("Blusas"));
 
-        new ProductDAO().create(nP);
+        new CategoryDAO().selectAll().forEach(category -> {
+            System.out.println(category.getName());
+        });
+
 
 
     }
