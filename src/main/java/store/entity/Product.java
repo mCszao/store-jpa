@@ -14,7 +14,7 @@ public class Product {
     private String name;
     private String description;
     private BigDecimal price;
-    private LocalDate createdAt = LocalDate.now();
+    private final LocalDate createdAt = LocalDate.now();
     @ManyToOne
     private Category category;
 
