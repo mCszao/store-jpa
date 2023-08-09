@@ -7,7 +7,7 @@ import store.entity.Category;
 import java.util.List;
 
 public class CategoryDAO {
-    private EntityManager entityManager;
+    final private EntityManager entityManager;
     public CategoryDAO(){
         this.entityManager = JPA.returnEntityManager();
     }
