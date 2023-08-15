@@ -6,21 +6,17 @@ import store.entity.Category;
 
 import java.util.List;
 
-public class CategoryDAO {
-    final private EntityManager entityManager;
-    public CategoryDAO(){
-        this.entityManager = JPA.returnEntityManager();
-    }
+public class CategoryDAO extends MyDAO{
+
+//    public CategoryDAO(){
+//        this.entityManager = JPA.returnEntityManager();
+//    }
 
     public void add(Category category){
         this.entityManager.persist(category);
         ocultTransaction();
     }
-    private void ocultTransaction(){
-        this.entityManager.getTransaction().begin();
-        this.entityManager.getTransaction().commit();
-        this.entityManager.close();
-    }
+
 
     public Category selectById(Long id){
         return this.entityManager.find(Category.class, id);
