@@ -13,8 +13,12 @@ public class Stocks {
     private String name;
 
 
-    public Stocks(String name){
+    public Stocks(){
         this.name = "Stock Default";
+    }
+
+    public Stocks(String name){
+        this.name = name;
     }
 
 }
