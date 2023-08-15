@@ -1,5 +1,5 @@
 CREATE DATABASE store;
-use store;
+USE store;
 CREATE TABLE categories (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL
@@ -18,7 +18,7 @@ CREATE TABLE products (
 
 CREATE TABLE stocks (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE stock (
@@ -28,7 +28,5 @@ CREATE TABLE stock (
   FOREIGN KEY (product_id) REFERENCES products(id),
   FOREIGN KEY (product_stock) REFERENCES stocks(id)
 );
-
-
 
 
