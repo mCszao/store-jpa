@@ -1,24 +1,25 @@
 package store.dao;
 
 import jakarta.persistence.EntityManager;
-import store.JPA;
 import store.entity.Category;
-
 import java.util.List;
 
 public class CategoryDAO extends MyDAO{
 
-//    public CategoryDAO(){
-//        this.entityManager = JPA.returnEntityManager();
-//    }
-
-    public void add(Category category){
-        this.entityManager.persist(category);
-        ocultTransaction();
+    public CategoryDAO(){
+        super();
     }
 
+    public CategoryDAO (EntityManager entityManager){
+        super(entityManager);
+    }
+    public void add(Category category){
+        this.entityManager.persist(category);
+
+    }
 
     public Category selectById(Long id){
+        System.out.println(id);
         return this.entityManager.find(Category.class, id);
     }
 
