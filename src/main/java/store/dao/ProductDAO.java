@@ -41,6 +41,11 @@ public class ProductDAO extends MyDAO{
         return this.entityManager.createQuery(jpql,  Product.class).setParameter("value", value).getResultList();
     }
 
+    public List<Product> selectByCategorieID(Long idCategory){
+        String jpql = "SELECT p FROM Product p WHERE p.category.id = :idCategory";
+        return this.entityManager.createQuery(jpql, Product.class).setParameter("idCategory", idCategory).getResultList();
+    }
+
 }
 
 
