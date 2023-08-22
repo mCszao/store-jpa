@@ -1,7 +1,6 @@
 package store.dao;
 
 import jakarta.persistence.EntityManager;
-import store.JPA;
 import store.entity.Product;
 
 import java.math.BigDecimal;
@@ -9,10 +8,16 @@ import java.util.List;
 
 
 public class ProductDAO extends MyDAO{
+    public ProductDAO(){
+        super();
+    }
 
+    public ProductDAO (EntityManager entityManager){
+        super(entityManager);
+    }
     public void create(Product product){
         this.entityManager.persist(product);
-        ocultTransaction();
+
     }
 
 
@@ -20,7 +25,7 @@ public class ProductDAO extends MyDAO{
         Product model = this.selectById(id);
         model = this.entityManager.merge(model);
         model.setPrice(price);
-        this.ocultTransaction();
+
     }
 
     public Product selectById(Long id){
