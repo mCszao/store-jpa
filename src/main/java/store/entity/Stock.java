@@ -15,7 +15,8 @@ public class Stock {
     private Product product;
     @ManyToOne
     private Stocks stock;
-    private BigDecimal product_quantity;
+
+    private BigDecimal product_quantity = new BigDecimal("0");
 
     public Stock(Product product, Stocks stockOnStocks){
         this.product = product;
