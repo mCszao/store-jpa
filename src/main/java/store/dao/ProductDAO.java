@@ -46,6 +46,11 @@ public class ProductDAO extends MyDAO{
         return this.entityManager.createQuery(jpql, Product.class).setParameter("idCategory", idCategory).getResultList();
     }
 
+    public List<Product> selectByStockID(Long idStock){
+        String jpql = "SELECT p FROM Product p INNER JOIN Stock s ON p.id = s.product.id WHERE s.stock.id = :idStock";
+        return  this.entityManager.createQuery(jpql, Product.class).setParameter("idStock", idStock).getResultList();
+    }
+
 }
 
 
