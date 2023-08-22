@@ -18,10 +18,6 @@ public class Product {
     @ManyToOne
     private Category category;
 
-    private BigDecimal quantity;
-
-    @ManyToOne
-    private Stock stock;
 
 
 
