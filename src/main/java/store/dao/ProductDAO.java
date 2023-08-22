@@ -33,12 +33,12 @@ public class ProductDAO extends MyDAO{
     }
 
     public List<Product> select(){
-        return this.entityManager.createQuery("SELECT p FROM Product p").getResultList();
+        return this.entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
     }
 
     public List<Product> selectLessThan(BigDecimal value){
         String jpql = "SELECT p FROM Product p WHERE p.price < :value";
-        return this.entityManager.createQuery(jpql).setParameter("value", value).getResultList();
+        return this.entityManager.createQuery(jpql,  Product.class).setParameter("value", value).getResultList();
     }
 
 }
