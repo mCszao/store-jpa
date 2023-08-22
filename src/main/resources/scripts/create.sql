@@ -22,6 +22,7 @@ CREATE TABLE stocks (
 );
 
 CREATE TABLE stock (
+  id INT PRIMARY KEY AUTO_INCREMENT,
   product_id INT NOT NULL,
   product_stock INT NOT NULL,
   product_quantity DECIMAL (3, 2) NOT NULL default 0,
