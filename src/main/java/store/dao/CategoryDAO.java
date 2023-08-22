@@ -19,12 +19,11 @@ public class CategoryDAO extends MyDAO{
     }
 
     public Category selectById(Long id){
-        System.out.println(id);
         return this.entityManager.find(Category.class, id);
     }
 
     public List<Category> selectAll(){
-        return this.entityManager.createQuery("SELECT c FROM Category c").getResultList();
+        return this.entityManager.createQuery("SELECT c FROM Category c", Category.class).getResultList();
     }
 
 }
