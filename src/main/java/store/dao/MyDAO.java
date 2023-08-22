@@ -13,9 +13,4 @@ public abstract class MyDAO {
         this.entityManager = JPA.returnEntityManager();
     }
 
-    protected void ocultTransaction(){
-        this.entityManager.getTransaction().begin();
-        this.entityManager.getTransaction().commit();
-        this.entityManager.close();
-    }
 }
