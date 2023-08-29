@@ -23,6 +23,7 @@ public class ProductByOrder {
         this.product = product;
         this.order = order;
         this.quantity = quantity;
+        this.unitPrice = product.getPrice();
         this.discount = new BigDecimal(0);
     }
 
@@ -48,5 +49,9 @@ public class ProductByOrder {
 
     public void setUnitPrice(){
         this.unitPrice = this.product.getPrice();
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }
