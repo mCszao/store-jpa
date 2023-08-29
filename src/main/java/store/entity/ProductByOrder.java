@@ -18,7 +18,6 @@ public class ProductByOrder {
     private BigDecimal unitPirce;
     private BigDecimal quantity;
     private BigDecimal discount;
-
     public ProductByOrder(){}
     public ProductByOrder(Product product, Order order, BigDecimal quantity) {
         this.product = product;
