@@ -17,7 +17,8 @@ public class Customer {
 
     private final LocalDate createdAt = LocalDate.now();
 
-
+    public Customer(){
+    }
     public Customer(String name, String cpf, String email, String phone) {
         this.name = name;
         this.cpf = cpf;
