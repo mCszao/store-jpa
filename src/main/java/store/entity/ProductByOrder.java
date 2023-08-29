@@ -45,4 +45,8 @@ public class ProductByOrder {
     public BigDecimal getDiscount() {
         return discount;
     }
+
+    public void setUnitPrice(){
+        this.unitPrice = this.product.getPrice();
+    }
 }
