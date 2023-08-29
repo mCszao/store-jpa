@@ -2,6 +2,8 @@ package store.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "customers")
 public class Customer {
@@ -12,6 +14,8 @@ public class Customer {
     private String cpf;
     private String email;
     private String phone;
+
+    private final LocalDate createdAt = LocalDate.now();
 
 
     public Customer(String name, String cpf, String email, String phone) {
