@@ -15,7 +15,7 @@ public class ProductByOrder {
     private Product product;
     @ManyToOne
     private Order order;
-    private BigDecimal unitPirce;
+    private BigDecimal unitPrice;
     private BigDecimal quantity;
     private BigDecimal discount;
     public ProductByOrder(){}
@@ -24,5 +24,25 @@ public class ProductByOrder {
         this.order = order;
         this.quantity = quantity;
         this.discount = new BigDecimal(0);
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public BigDecimal getUnitPirce() {
+        return unitPirce;
+    }
+
+    public BigDecimal getQuantity() {
+        return quantity;
+    }
+
+    public BigDecimal getDiscount() {
+        return discount;
     }
 }
