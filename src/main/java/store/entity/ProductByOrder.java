@@ -35,7 +35,7 @@ public class ProductByOrder {
     }
 
     public BigDecimal getUnitPirce() {
-        return unitPirce;
+        return unitPrice;
     }
 
     public BigDecimal getQuantity() {
