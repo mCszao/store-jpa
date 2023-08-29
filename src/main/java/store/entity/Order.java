@@ -24,4 +24,11 @@ public class Order {
     public Order(Customer customer) {
         this.customer = customer;
     }
+
+    public void addProduct(ProductByOrder product){
+        this.products.add(product);
+        product.setOrder(this);
+    }
+
+
 }
