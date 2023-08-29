@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,10 @@ public class Order {
     @ManyToOne
     private Customer customer;
     @OneToMany(mappedBy = "order")
-    private List<ProductByOrder> products;
-
+    private List<ProductByOrder> products = new ArrayList<>();
     public Order(){}
+
+    public Order(Customer customer) {
+        this.customer = customer;
+    }
 }
