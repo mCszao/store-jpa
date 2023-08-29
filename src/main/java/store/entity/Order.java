@@ -13,7 +13,8 @@ public class Order {
     private Long id;
     private BigDecimal fullSaleValue;
     private LocalDate createdAt = LocalDate.now();
-
     @ManyToOne
     private Customer customer;
+
+    public Order(){}
 }
