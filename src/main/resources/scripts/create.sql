@@ -30,4 +30,5 @@ CREATE TABLE stock (
   FOREIGN KEY (product_stock) REFERENCES stocks(id)
 );
 
-
+INSERT INTO stocks (name) values ("Main stock");
+INSERT INTO stocks (name) values ("Step stock");
