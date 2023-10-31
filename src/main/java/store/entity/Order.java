@@ -13,7 +13,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal fullSaleValue;
+    private BigDecimal fullSaleValue = BigDecimal.ZERO;
     private LocalDate createdAt = LocalDate.now();
     @ManyToOne
     private Customer customer;
@@ -28,6 +28,10 @@ public class Order {
     public void addProduct(ProductByOrder product){
         this.products.add(product);
         product.setOrder(this);
+        this.fullSaleValue.add(product.getUnitPirce().multiply(product.getQuantity()));
     }
 
+    public BigDecimal getFullSaleValue(){
+        return this.fullSaleValue;
+    }
 }
